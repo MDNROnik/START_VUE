@@ -17,9 +17,7 @@ const decidedDescriptionLengths = computed(() => {
   }
   return description;
 });
-const fun = () => {
-  console.log("clicked");
-};
+
 </script>
 <template>
   <div class="bg-white rounded-xl shadow-md relative">
