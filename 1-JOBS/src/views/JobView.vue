@@ -1,10 +1,13 @@
 <script setup>
 import axios from "axios";
 import { onMounted, reactive, ref } from "vue";
-import { useRoute, RouterLink } from "vue-router";
+import { useRoute, RouterLink, useRouter } from "vue-router";
 import loader from "vue-spinner/src/PulseLoader.vue";
 import BackButton from "../components/BackButton.vue";
+
+
 const route = useRoute();
+const route2 = useRouter();
 
 const jobID = route.params.id;
 
@@ -14,10 +17,19 @@ const state = reactive({
   loading: true,
 });
 
+const deleteJob = async () => {
+  try {
+    await axios.delete(`/api/jobs/${jobID}`);
+    route2.push('/jobs');
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 onMounted(async () => {
   
   try {
-    const response = await axios.get(`http://localhost:3001/jobs/${jobID}`);
+    const response = await axios.get(`/api/jobs/${jobID}`);
     state.job = response.data;
     secondObject.value = state.job.company;
     state.loading = false;
@@ -48,7 +60,7 @@ onMounted(async () => {
                   class="text-gray-500 mb-4 flex align-middle justify-center md:justify-start"
                 >
                   <i
-                    class="fa-solid fa-location-dot text-lg text-orange-700 mr-2"
+                    class="pi pi-map-marker text-lg text-orange-700 mr-2"
                   ></i>
                   <p class="text-orange-700">{{ state.job.location }}</p>
                 </div>
@@ -102,7 +114,7 @@ onMounted(async () => {
                   class="bg-green-500 hover:bg-green-600 text-white text-center font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block"
                   >Edit Job</RouterLink
                 >
-                <button
+                <button @click="deleteJob"
                   class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline mt-4 block"
                 >
                   Delete Job

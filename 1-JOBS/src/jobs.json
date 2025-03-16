@@ -15,18 +15,18 @@
       "id": "1"
     },
     {
-      "id": "2",
-      "title": "Front-End Engineer (Vue)",
       "type": "Full-Time",
+      "title": "Front-End Engineer",
       "description": "Join our team as a Front-End Developer in sunny Miami, FL. We are looking for a motivated individual with a passion for crafting beautiful and responsive web applications. Experience with UI/UX design principles and a strong attention to detail are highly desirable.",
-      "location": "Miami, FL",
       "salary": "$70K - $80K",
+      "location": "Miami, FL",
       "company": {
         "name": "Veneer Solutions",
         "description": "Veneer Solutions is a creative agency specializing in digital design and development. Our team is dedicated to pushing the boundaries of creativity and innovation to deliver exceptional results for our clients.",
         "contactEmail": "contact@loremipsum.com",
         "contactPhone": "555-555-5555"
-      }
+      },
+      "id": "2"
     },
     {
       "id": "3",
@@ -82,6 +82,384 @@
         "description": "Port Solutions is a leading technology company specializing in software development and digital marketing. We are committed to providing our clients with cutting-edge solutions and our employees with a supportive and rewarding work environment.",
         "contactEmail": "contact@ipsumlorem.com",
         "contactPhone": "555-555-5555"
+      }
+    },
+    {
+      "id": "0207",
+      "type": "Part-Time",
+      "title": "Reed Wilkerson",
+      "description": "Sit ab ullamco exer",
+      "salary": "$175K - $200K",
+      "location": "Omnis rerum doloribu",
+      "company": {
+        "name": "Carpenter Morse Traders",
+        "description": "Corporis voluptatem",
+        "contactEmail": "cysykyja@mailinator.com",
+        "contactPhone": "+1 (843) 232-1897"
+      }
+    },
+    {
+      "id": "378e",
+      "type": "Internship",
+      "title": "Shaine Jarvis",
+      "description": "Consectetur magna no",
+      "salary": "Over $200K",
+      "location": "Aut deserunt consect",
+      "company": {
+        "name": "Potter Sosa Plc",
+        "description": "Aute ullam illo est ",
+        "contactEmail": "jeby@mailinator.com",
+        "contactPhone": "+1 (512) 303-8312"
+      }
+    },
+    {
+      "id": "2a4b",
+      "type": "Full-Time",
+      "title": "Ariel Stafford",
+      "description": "Deserunt enim qui qu",
+      "salary": "$150K - $175K",
+      "location": "Est accusantium sed",
+      "company": {
+        "name": "Lewis Hurst Co",
+        "description": "Amet magni nesciunt",
+        "contactEmail": "zimipibake@mailinator.com",
+        "contactPhone": "+1 (152) 802-8645"
+      }
+    },
+    {
+      "id": "c4ea",
+      "type": "Part-Time",
+      "title": "Solomon Goff",
+      "description": "Adipisicing Nam accu",
+      "salary": "$50K - $60K",
+      "location": "Similique rerum non ",
+      "company": {
+        "name": "Hodge and Becker Traders",
+        "description": "Voluptatem minus con",
+        "contactEmail": "setuzyvoji@mailinator.com",
+        "contactPhone": "+1 (912) 353-2446"
+      }
+    },
+    {
+      "id": "e08f",
+      "type": "Full-Time",
+      "title": "Kato Hobbs",
+      "description": "Veniam omnis sunt s",
+      "salary": "$150K - $175K",
+      "location": "Et exercitationem iu",
+      "company": {
+        "name": "Gordon and Oconnor Trading",
+        "description": "Fugit dolore doloru",
+        "contactEmail": "fili@mailinator.com",
+        "contactPhone": "+1 (642) 996-1038"
+      }
+    },
+    {
+      "id": "c223",
+      "type": "Full-Time",
+      "title": "Fitzgerald Dyer",
+      "description": "Accusantium aut mini",
+      "salary": "$50K - $60K",
+      "location": "Vel molestiae necess",
+      "company": {
+        "name": "Mayer Mcclain Plc",
+        "description": "Officia expedita ali",
+        "contactEmail": "deluja@mailinator.com",
+        "contactPhone": "+1 (669) 133-3335"
+      }
+    },
+    {
+      "id": "cdc7",
+      "type": "Full-Time",
+      "title": "Noelle Small",
+      "description": "Tempora et labore in",
+      "salary": "$60K - $70K",
+      "location": "Exercitationem velit",
+      "company": {
+        "name": "Wiley Acosta LLC",
+        "description": "Esse nesciunt conse",
+        "contactEmail": "qedova@mailinator.com",
+        "contactPhone": "+1 (446) 528-2479"
+      }
+    },
+    {
+      "id": "3b06",
+      "type": "Internship",
+      "title": "Ryder Carlson",
+      "description": "Minim corporis in hi",
+      "salary": "$90K - $100K",
+      "location": "Temporibus obcaecati",
+      "company": {
+        "name": "Mullins and Holmes Traders",
+        "description": "Fugit est sapiente",
+        "contactEmail": "fizac@mailinator.com",
+        "contactPhone": "+1 (752) 222-1058"
+      }
+    },
+    {
+      "id": "875f",
+      "type": "Part-Time",
+      "title": "Fitzgerald Cooke",
+      "description": "Porro obcaecati sint",
+      "salary": "$60K - $70K",
+      "location": "Esse quia cumque de",
+      "company": {
+        "name": "Watson and Hunter Traders",
+        "description": "Elit amet quae ut ",
+        "contactEmail": "wejonikac@mailinator.com",
+        "contactPhone": "+1 (568) 146-7342"
+      }
+    },
+    {
+      "id": "0f7d",
+      "type": "Full-Time",
+      "title": "Len Finley",
+      "description": "Amet earum iste sus",
+      "salary": "$150K - $175K",
+      "location": "Natus fugiat consequ",
+      "company": {
+        "name": "Lott and Bradley Inc",
+        "description": "Commodi accusantium ",
+        "contactEmail": "cogo@mailinator.com",
+        "contactPhone": "+1 (366) 228-5645"
+      }
+    },
+    {
+      "id": "702a",
+      "type": "Internship",
+      "title": "Jackson Chaney",
+      "description": "Consectetur repellen",
+      "salary": "Over $200K",
+      "location": "Molestiae temporibus",
+      "company": {
+        "name": "Hall and Haynes Plc",
+        "description": "Eaque eveniet in co",
+        "contactEmail": "cagudoly@mailinator.com",
+        "contactPhone": "+1 (672) 219-2076"
+      }
+    },
+    {
+      "id": "230b",
+      "type": "Part-Time",
+      "title": "Samson Ortega",
+      "description": "Enim in magnam in lo",
+      "salary": "$125K - $150K",
+      "location": "Est explicabo Even",
+      "company": {
+        "name": "Lott Kent Co",
+        "description": "Quis id omnis eaque ",
+        "contactEmail": "rubas@mailinator.com",
+        "contactPhone": "+1 (961) 323-7727"
+      }
+    },
+    {
+      "id": "aca1",
+      "type": "Internship",
+      "title": "Juliet Mccullough",
+      "description": "Esse qui vel tempor",
+      "salary": "Over $200K",
+      "location": "Rem velit enim labo",
+      "company": {
+        "name": "Webb Carrillo Co",
+        "description": "Quaerat voluptatem i",
+        "contactEmail": "nyhoqafin@mailinator.com",
+        "contactPhone": "+1 (394) 795-8824"
+      }
+    },
+    {
+      "id": "d792",
+      "type": "Remote",
+      "title": "Hadley Woodward",
+      "description": "Est irure animi ad ",
+      "salary": "$50K - $60K",
+      "location": "Id dolores maiores ",
+      "company": {
+        "name": "Gates and Mccullough Traders",
+        "description": "Ut consequuntur volu",
+        "contactEmail": "zixol@mailinator.com",
+        "contactPhone": "+1 (339) 729-4324"
+      }
+    },
+    {
+      "id": "640b",
+      "type": "Internship",
+      "title": "Zoe Preston",
+      "description": "Voluptatem Dolore s",
+      "salary": "$80K - $90K",
+      "location": "Cillum sequi repelle",
+      "company": {
+        "name": "Duncan Atkinson Plc",
+        "description": "Ullamco veritatis iu",
+        "contactEmail": "wuheca@mailinator.com",
+        "contactPhone": "+1 (462) 664-3832"
+      }
+    },
+    {
+      "id": "c8fb",
+      "type": "Full-Time",
+      "title": "Micah Glass",
+      "description": "Est velit exercitat",
+      "salary": "$50K - $60K",
+      "location": "Dolor vero explicabo",
+      "company": {
+        "name": "Carpenter Hoover Co",
+        "description": "Alias adipisci quis ",
+        "contactEmail": "veforaku@mailinator.com",
+        "contactPhone": "+1 (961) 464-3662"
+      }
+    },
+    {
+      "id": "1c86",
+      "type": "Part-Time",
+      "title": "Henry Donovan",
+      "description": "Cupiditate cupidatat",
+      "salary": "$175K - $200K",
+      "location": "Quisquam non quibusd",
+      "company": {
+        "name": "Langley Ratliff Trading",
+        "description": "Dolorum placeat dol",
+        "contactEmail": "fasu@mailinator.com",
+        "contactPhone": "+1 (365) 816-2748"
+      }
+    },
+    {
+      "id": "54f5",
+      "type": "Full-Time",
+      "title": "Keegan Villarreal",
+      "description": "Aute culpa molestia",
+      "salary": "$50K - $60K",
+      "location": "In ab et odio Nam do",
+      "company": {
+        "name": "Shelton Rogers Traders",
+        "description": "Ea sed ut illum nat",
+        "contactEmail": "gydiz@mailinator.com",
+        "contactPhone": "+1 (579) 933-4993"
+      }
+    },
+    {
+      "id": "0076",
+      "type": "Part-Time",
+      "title": "Lareina Hughes",
+      "description": "Aut architecto aliqu",
+      "salary": "$70K - $80K",
+      "location": "Nulla omnis iste omn",
+      "company": {
+        "name": "Michael and Hanson Associates",
+        "description": "Id vitae voluptatem",
+        "contactEmail": "mawos@mailinator.com",
+        "contactPhone": "+1 (125) 336-5674"
+      }
+    },
+    {
+      "id": "2c78",
+      "type": "Part-Time",
+      "title": "Dale Moran",
+      "description": "Eu praesentium eum s",
+      "salary": "$90K - $100K",
+      "location": "Fugit sit explicab",
+      "company": {
+        "name": "Hester Jefferson Associates",
+        "description": "Non sunt velit repel",
+        "contactEmail": "nyziq@mailinator.com",
+        "contactPhone": "+1 (174) 624-8316"
+      }
+    },
+    {
+      "id": "c4c2",
+      "type": "Remote",
+      "title": "Ann Elliott",
+      "description": "Voluptatem aute sint",
+      "salary": "$125K - $150K",
+      "location": "Quo voluptatem non n",
+      "company": {
+        "name": "Delacruz Barry Plc",
+        "description": "A ea sunt aut nostru",
+        "contactEmail": "syky@mailinator.com",
+        "contactPhone": "+1 (834) 706-4762"
+      }
+    },
+    {
+      "id": "7e80",
+      "type": "Remote",
+      "title": "Vernon Rich",
+      "description": "Quis velit asperiore",
+      "salary": "Over $200K",
+      "location": "Eligendi tempor volu",
+      "company": {
+        "name": "Merritt and Cochran Inc",
+        "description": "Et nesciunt commodo",
+        "contactEmail": "tohiroq@mailinator.com",
+        "contactPhone": "+1 (949) 676-2348"
+      }
+    },
+    {
+      "id": "ffd4",
+      "type": "Remote",
+      "title": "Kalia Frazier",
+      "description": "Ex molestiae beatae ",
+      "salary": "$90K - $100K",
+      "location": "Totam illo illo inci",
+      "company": {
+        "name": "Mcdonald and Potts Trading",
+        "description": "Est quidem nisi tem",
+        "contactEmail": "kuro@mailinator.com",
+        "contactPhone": "+1 (251) 788-1854"
+      }
+    },
+    {
+      "id": "6d53",
+      "type": "Internship",
+      "title": "Kathleen Jefferson",
+      "description": "Quidem totam ut aut ",
+      "salary": "Over $200K",
+      "location": "Ab qui Nam do quos",
+      "company": {
+        "name": "Swanson Hoffman Inc",
+        "description": "Dolorum voluptate pr",
+        "contactEmail": "bokityjedy@mailinator.com",
+        "contactPhone": "+1 (445) 864-7289"
+      }
+    },
+    {
+      "type": "Internship",
+      "title": "Christopher Powell FUCK 23",
+      "description": "Deserunt ut providen",
+      "salary": "$70K - $80K",
+      "location": "Quasi molestiae nisi",
+      "company": {
+        "name": "Vaughan Petty LLC",
+        "description": "Quis facere minus eo",
+        "contactEmail": "taro@mailinator.com",
+        "contactPhone": "+1 (584) 433-4767"
+      },
+      "id": "8c63"
+    },
+    {
+      "type": "Part-Time",
+      "title": "Macy Emerson 2",
+      "description": "Magna adipisicing se",
+      "salary": "$150K - $175K",
+      "location": "Eum excepturi fugit",
+      "company": {
+        "name": "Schroeder and Jensen Co",
+        "description": "Dolore voluptatem et",
+        "contactEmail": "zarucuc@mailinator.com",
+        "contactPhone": "+1 (404) 824-5638"
+      },
+      "id": "3917"
+    },
+    {
+      "id": "1b7e",
+      "type": "Part-Time",
+      "title": "Uma Gutierrez",
+      "description": "Omnis praesentium pa",
+      "salary": "Over $200K",
+      "location": "Autem et tempor haru",
+      "company": {
+        "name": "Boyer Garrison Traders",
+        "description": "Fugiat aut aliqua ",
+        "contactEmail": "foperihon@mailinator.com",
+        "contactPhone": "+1 (662) 402-1551"
       }
     }
   ]
