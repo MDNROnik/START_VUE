@@ -1,5 +1,5 @@
 <template>
-    <h1>IN RESULT {{ props.count }}</h1>
+    <h1>YOU TOOK {{ props.count }} miliseconds</h1>
 </template>
 
 <script setup>

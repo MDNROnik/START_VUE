@@ -30,18 +30,18 @@ const stopResultShow = ()=>{
 </script>
 
 <template>
-  <div class="flex items-center justify-center">
+  <div class="flex items-center justify-center pt-25">
     <div>
       <h1>START A BASIC PROJECT FOR LEARNING</h1>
-      <button @click="playTheGame"  :disabled="play">
+      <button class="pb-8"  @click="playTheGame"  :disabled="play">
         <div v-if="play==false" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">PLAY NOW</div>
         <div v-else class="bg-blue-200 text-white font-bold py-2 px-4 rounded-full">PLAY NOW</div>
         <!-- <div>PLAY NOW</div> -->
       </button>
       
-      <Block class="box-border size-50 border-4 p-4" v-if="play==true" :delay="delay" :appFunction="appFunction" />
+      <Block class="box-border size-70 border-4 p-20 text-center bg-green-500 text-white" v-if="play==true" :delay="delay" :appFunction="appFunction" />
 
-      <Result class="box-border size-50 border-4 p-4" v-if="showResult==true" :count="delayOfClick" @click="stopResultShow"/>
+      <Result class="box-border size-70 border-4 p-20 text-center bg-sky-500 text-white" v-if="showResult==true" :count="delayOfClick" @click="stopResultShow"/>
     
     </div>
   </div>

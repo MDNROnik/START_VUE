@@ -45,7 +45,7 @@ const stopTime = () => {
 
 <template>
     <div v-if="showBlock==true" @click="fun">
-        <h1>hello world {{ delay }}</h1>
+        <h1 class="items-center justify-center">Click Me As Soon As Possible</h1>
     </div>
     
 </template>
