@@ -10,20 +10,36 @@ const props = defineProps (
 )
 
 let showBlock = ref(false);
+let count = ref(0);
+let yes = ref(null);
+let showResult = ref(false);
+
+
 
 
 onMounted(() => {
     console.log(`delay in block: ${props.delay}`);
-    
     setTimeout(() => {
         showBlock.value = true;
-    }, props.delay);
+        startTime();
+    }, props.delay); 
 });
 const fun=()=>{
     showBlock.value=false;
-    console.log("clicked");
-    props.appFunction();
+    stopTime();
+    props.appFunction( count);
 }
+const startTime = () => {
+    yes = setInterval(() => {
+        count.value++;
+    }, 10);
+}
+const stopTime = () => {
+    clearInterval(yes);
+    console.log(count.value);
+    showResult.value = true;
+}
+
 
 </script>
 
@@ -31,4 +47,5 @@ const fun=()=>{
     <div v-if="showBlock==true" @click="fun">
         <h1>hello world {{ delay }}</h1>
     </div>
+    
 </template>

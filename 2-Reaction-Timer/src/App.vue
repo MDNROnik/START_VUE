@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from "vue";
 import Block from "./components/Block.vue";
+import Result from "./components/Result.vue";
 
 let play = ref(false);
 let delay = ref(null);
@@ -9,13 +10,23 @@ const playTheGame = () => {
   delay.value = 2000 + Math.random() * 5000;
   console.log("delay", delay.value);
 };
+let showResult = ref(false);
+let delayOfClick = ref(0);
 
-const reSetTheButton = () => {
-  console.log("resetting the button from block");
-  
+const appFunction = (count) => {
+  console.log("resetting the button from block",  count.value);
+  showResult.value = true;
+  delayOfClick.value = count.value;
   play.value = false;
   delay.value = null;
+  console.log(showResult.value);
+  
 };
+const stopResultShow = ()=>{
+  console.log("STOP SHOW RESULT");
+  
+  showResult.value=false;
+}
 </script>
 
 <template>
@@ -27,7 +38,11 @@ const reSetTheButton = () => {
         <div v-else class="bg-blue-200 text-white font-bold py-2 px-4 rounded-full">PLAY NOW</div>
         <!-- <div>PLAY NOW</div> -->
       </button>
-      <Block class="box-border size-50 border-4 p-4" v-if="play==true" :delay="delay" :appFunction="reSetTheButton" />
+      
+      <Block class="box-border size-50 border-4 p-4" v-if="play==true" :delay="delay" :appFunction="appFunction" />
+
+      <Result class="box-border size-50 border-4 p-4" v-if="showResult==true" :count="delayOfClick" @click="stopResultShow"/>
+    
     </div>
   </div>
 </template>
