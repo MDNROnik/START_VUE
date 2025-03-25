@@ -29,7 +29,7 @@ const handleSubmit = () => {
 </script>
 
 <template>
-  <div @submit.prevent="handleSubmit">
+  <div class="pl-30 pr-30" @submit.prevent="handleSubmit">
     <form class="body2">
       <label for="title">Title: </label>
       <input
