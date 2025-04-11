@@ -1,0 +1,22 @@
+
+import firebase from 'firebase/app'
+import 'firebase/firestore'
+
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyBe4sFoxQEXB4A0ZH0c_WT_7T901SZ3d_w",
+  authDomain: "live-chat-room-b6375.firebaseapp.com",
+  projectId: "live-chat-room-b6375",
+  storageBucket: "live-chat-room-b6375.firebasestorage.app",
+  messagingSenderId: "1000845412986",
+  appId: "1:1000845412986:web:eee2002aad0ba9b14509c3",
+  measurementId: "G-0ZHFN2MWFB"
+};
+
+firebase.initializeApp(firebaseConfig) 
+
+const db = firebase.firestore()
+const timestamp = firebase.firestore.FieldValue.serverTimestamp
+
+export { db, timestamp }
+
