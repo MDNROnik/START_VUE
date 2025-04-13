@@ -4,7 +4,7 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
   <RouterLink to="/">Home</RouterLink>
-  <RouterLink to="/test"> Test</RouterLink>
+  <RouterLink to="/chat"> Chat Room</RouterLink>
   <RouterView />
 </template>
 
