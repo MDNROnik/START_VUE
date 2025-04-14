@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <NavBarChar />
+    <ChatsWindow />
     <NewChat />
   </div>
 </template>
@@ -8,6 +9,7 @@
 <script setup>
 import NavBarChar from "@/components/NavBarChar.vue";
 import NewChat from "@/components/NewChat.vue";
+import ChatsWindow from "@/components/ChatsWindow.vue";
 
 import getUser from "@/Composable/getUser";
 import { useRouter } from "vue-router";
