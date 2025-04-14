@@ -1,31 +1,41 @@
 <template>
   <form>
     <textarea
-      @keypress.enter.prevent="sendMessage"
+      @keypress.enter.prevent="handleSubmit"
       placeholder="Type Your Message "
       v-model="message"
     ></textarea>
-
+    <div v-if="err" class="error">{{ err }} blah</div>
   </form>
 </template>
 
 <script setup>
-import getUser from "@/Composable/getUser"; // Assuming getUser is the default export
-import { timestamp } from "@/firebase/configs.js";
-
+import getUser from "@/Composable/getUser";
+import useCollection from "@/Composable/useCollection";
+import { timestamp } from "@/firebase/configs";
 import { ref } from "vue";
-
+const err = ref(null);
+const user = getUser();
+// console.log("user: ", user.value);
+// refs
 const message = ref("");
-const sendMessage = async () => {
-  
+
+const handleSubmit = async () => {
   const chat = {
+    name: user.value.displayName,
+    email : user.value.email,
     message: message.value,
-    sender: "NOW",
-    timestamp: timestamp(),
+    createdAt: timestamp(),
   };
-  console.log(chat);
-  
-  
+  // console.log(chat);
+  const error = useCollection('messages', chat);
+  if(!error.value) {
+    message.value = "";
+    console.log("message sent: ", chat);
+  }
+  else{
+    err.value = error.value;
+  }
 };
 </script>
 
