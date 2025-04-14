@@ -38,7 +38,7 @@ const handleSubmit = async () => {
   const res = await login(email.value, password.value);
   if(res[0]==='F'){
     error.value = res;
-    console.log(error.value);
+    // console.log(error.value);
   }
   else{
     router.push({name: "chat"});

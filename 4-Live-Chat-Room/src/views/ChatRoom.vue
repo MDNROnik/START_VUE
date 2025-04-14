@@ -1,11 +1,30 @@
 <template>
   <div class="container">
     <NavBarChar />
+    <NewChat />
   </div>
 </template>
 
 <script setup>
 import NavBarChar from "@/components/NavBarChar.vue";
+import NewChat from "@/components/NewChat.vue";
+
+import getUser from "@/Composable/getUser";
+import { useRouter } from "vue-router";
+import { watch } from "vue";
+
+const user = getUser();
+const router = useRouter();
+
+watch(user, ()=>{
+  if (user.value) {
+    // console.log("User data:", user.value);
+  } else {
+    // console.log("No user data available.");
+    router.push({name: "home" });
+  }
+});
+
 </script>
 
 

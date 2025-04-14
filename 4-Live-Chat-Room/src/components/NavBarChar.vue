@@ -23,7 +23,7 @@ import { useRouter } from "vue-router";
 // console.log( "current user: ",user) 
 
 const user = getUser();
-console.log("user: ", user.value);
+// console.log("user: ", user.value);
 
 
 const router = useRouter();
@@ -32,10 +32,10 @@ const { error, logout } = useLogout();
 const handleClick = async () => {
   try {
     await logout();
-    console.log("Logout successful");
+    // console.log("Logout successful");
   } catch (err) {
     error.value = err.message;
-    console.error("Logout failed:", error.value);
+    // console.error("Logout failed:", error.value);
   }
   if (!error.value) {
     router.push({name: "home"});

@@ -1,6 +1,6 @@
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { ref } from 'vue';
-import { auth } from '../firebase/configs';
+import { auth } from '../firebase/configs.js';
 
 const error = ref(null);
 
@@ -11,11 +11,11 @@ const login = async (email, password) => {
     if (!res) {
       throw new Error('Could not complete login')
     }
-    console.log('User logged in:');
-    console.log(res.user);
+    // console.log('User logged in:');
+    // console.log(res.user);
     return res
   } catch (err) {
-    console.log('Error logging in:', err.message);
+    // console.log('Error logging in:', err.message);
     error.value = err.message
     return error.value
   }
