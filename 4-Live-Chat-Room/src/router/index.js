@@ -6,14 +6,27 @@ import HomeView from '../views/HomeView.vue';
 
 // for check the user is logged in or not
 const requireAuth = async (to, from, next) => { 
-  let user = await auth.currentUser;
+  let user = auth.currentUser;
   console.log('user :', user);
   if (user) {
-    next();
+    next();// go in chat page
   } else {
     next({ name: 'home' }); // or 'login'
   }
 }
+
+// for check the user is logged in or not then not allow to go to the home page
+const requireNoAuth = async (to, from, next) => { 
+  let user = auth.currentUser;
+  console.log('user :', user);
+  if (user) {
+    next({ name: 'chat' }); // stay on chat page
+  } else {
+    next(); // or 'login'
+  }
+}
+
+
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -22,6 +35,7 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: HomeView,
+      beforeEnter: requireNoAuth,
     },
     {
       path: '/chat',

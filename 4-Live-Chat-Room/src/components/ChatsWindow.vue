@@ -18,11 +18,14 @@ import { computed, onUpdated, ref, watchEffect } from "vue";
 
 const { documents, error } = getCollection("messages");
 console.log("documents: ", documents);
+
+// watch for changes in documents
 watchEffect(() => {
   if (documents.value) {
     console.log("Documents loaded:", documents.value);
   }
 });
+
 // format timestamp
 const formattedDocuments = computed(() => {
   if (documents.value) {
@@ -33,12 +36,13 @@ const formattedDocuments = computed(() => {
   }
 });
 
-
 // auto-scroll to bottom of messages
 const messages = ref(null);
 onUpdated(() => {
   messages.value.scrollTop = messages.value.scrollHeight;
 });
+
+
 </script>
 
 <style scoped>

@@ -45,6 +45,11 @@ const getCollection = (collectionName) => {
         error.value = 'Could not fetch the data';
     });
 
+    // unsubscribe the listener when the component is unmounted
+    onUnmounted(() => {
+        unsubscribe();
+    });
+
     return { documents, error };
 }
 
