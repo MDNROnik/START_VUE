@@ -1,6 +1,6 @@
+import { addDoc, collection } from "firebase/firestore";
 import { ref } from 'vue';
 import { db } from '../firebase/configs.js';
-import { collection, addDoc } from "firebase/firestore";
 
 // const useCollection = (coll) => { 
 //     const error = ref(null);

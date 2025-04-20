@@ -1,28 +1,61 @@
-import { ref } from 'vue'
-import { projectFirestore } from '../firebase/config'
+import { addDoc, collection } from "firebase/firestore";
+import { ref } from 'vue';
+import { projectFirestore } from '../firebase/config';
 
-const useCollection = (collection) => {
+// const useCollection = (collection) => {
 
-  const error = ref(null)
+//   const error = ref(null)
+//   const isPending = ref(false);
+//   // add a new document
+//   const addDoc = async (doc) => {
+//     error.value = null
+//     isPending.value = true;
+//     try {
+//       await projectFirestore.collection(collection).add(doc)
+//       isPending.value = false;
+//       error.value = null
+//     }
+//     catch(err) {
+//       console.log(err.message)
+//       error.value = 'could not send the message'
+//       isPending.value = false;
+//     }
+//   }
+//   return { error, addDoc, isPending }
+// }
+// export default useCollection
+
+
+
+const useCollection = async(collectionName, data) => {
+  const colRef = collection(projectFirestore, collectionName);
+  const error = ref(null);
   const isPending = ref(false);
-  // add a new document
-  const addDoc = async (doc) => {
-    error.value = null
-    isPending.value = true;
-    try {
-      await projectFirestore.collection(collection).add(doc)
+
+  isPending.value = true;
+  error.value = null;
+
+  try{
+      await addDoc(colRef, data);
       isPending.value = false;
-      error.value = null
-    }
-    catch(err) {
-      console.log(err.message)
-      error.value = 'could not send the message'
-      isPending.value = false;
-    }
+      error.value = null;
   }
+  catch (err) {
+      error.value = 'Could not add the document';
+      console.log(err.message);
+      isPending.value = false;
+  }
+  return {error, isPending};
 
-  return { error, addDoc, isPending }
 
+  // await addDoc(colRef, data)
+  //     .then(() => {
+  //         console.log("Document written with ID: ", colRef);
+  //     })
+  //     .catch((error) => {
+  //         console.error("Error adding document: ", error);
+  //         return error;
+  //     });
 }
-
 export default useCollection
+
