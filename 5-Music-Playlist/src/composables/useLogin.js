@@ -11,18 +11,19 @@ const login = async (email, password) => {
   isPending.value = true;
   try {
     const res = await signInWithEmailAndPassword(projectAuth, email, password)
-    // if (!res) {
-    //   throw new Error('Could not complete login')
-    // }
+    if (!res) {
+      console.log('User logged in:', res.user);
+      throw new Error('Could not complete login')
+    }
     // console.log('User logged in:', res.user);
     isPending.value = false;
     error.value = null;
     return res
   } catch (err) {
-    // console.log('Error logging in:', err.message);
+    console.log('Error logging in:', err.message);
     error.value = err.message
     isPending.value = false;
-    return error.value
+    return error
   }
 }
 

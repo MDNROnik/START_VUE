@@ -22,8 +22,9 @@ const password = ref("");
 const handleSubmit = async () => {
   // console.log(111111);
   const res = await login(email.value, password.value);
-  console.log(res);
-  if (!res) {
+  console.log(res.user);
+  console.log(error.value);
+  if (error) {
     console.log("user logged in");
   }
   else{
