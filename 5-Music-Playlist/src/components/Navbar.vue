@@ -5,6 +5,7 @@
         <router-link :to="{ name: 'Home' }">Voice Of Your Music</router-link>
       </h1>
       <div class="links">
+        <router-link v-if="user" class="btn" :to="{ name: 'MadePlaylist' }">Made Playlist</router-link>
         <button v-if="user" @click="handleClick">Logout</button>
         <router-link v-if="!user" class="btn" :to="{ name: 'Signup' }">Signup</router-link>
         <router-link v-if="!user" class="btn" :to="{ name: 'Login' }">Login</router-link>

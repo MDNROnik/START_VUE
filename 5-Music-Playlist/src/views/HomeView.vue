@@ -3,12 +3,42 @@
     <h1>Welcome to the Home Page</h1>
     <p>This is a simple Vue.js application.</p>
   </div>
+  <div v-if="error">{{ error }}</div>
+  <!-- <div v-if="formattedDocuments" ref="messages" class="messages">
+    <div v-for="doc in formattedDocuments" :key="doc.id" class="single">
+      <span class="name">{{ doc.title }}</span>
+      <span class="message">{{ doc.description }}</span>
+      <span class="message">{{ doc.userName }}</span>
+    </div>
+  </div> -->
+  <SingleBlog :playlists="documents"/>
+  
 </template>
 
 <script setup>
+import getCollection from "@/composables/getCollection";
+import { formatDistanceToNow } from "date-fns";
+import { computed, watchEffect } from "vue";
+import SingleBlog from "@/components/SingleBlog.vue";
 
+const { documents, error } = getCollection("playlists");
+
+// watch for changes in documents
+watchEffect(() => {
+  if (documents.value) {
+    console.log("Documents loaded:", documents.value);
+  }
+});
+
+// format timestamp
+const formattedDocuments = computed(() => {
+  if (documents.value) {
+    return documents.value.map((doc) => {
+      let time = formatDistanceToNow(doc.createdAt.toDate());
+      return { ...doc, createdAt: time };
+    });
+  }
+});
 </script>
 
-<style>
-
-</style>
+<style></style>

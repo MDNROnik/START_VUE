@@ -17,7 +17,7 @@
       <div class="error"></div>
       <div v-if="user">
         <button v-if="!isPend">Made</button>
-        <button v-else>Loading...</button>
+        <button v-else disabled>Loading...</button>
       </div>
     </form>
   </div>
@@ -54,14 +54,14 @@ const handleSubmit = async () => {
   const { error, isPending } = await useCollection("playlists", playlist);
 
   if (!error) {
-    title.value = "";
-    description.value = "";
     console.log("Playlist created successfully!");
     console.log("isPending", isPending.value);
   } else {
     console.log(error.value);
   }
   isPend.value = false;
+  title.value = "";
+  description.value = "";
 };
 </script>
 
