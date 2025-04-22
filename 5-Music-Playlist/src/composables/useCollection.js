@@ -59,6 +59,8 @@ const useCollection = async(collectionName, data) => {
   //         console.error("Error adding document: ", error);
   //         return error;
   //     });
+
 }
+
 export default useCollection
 

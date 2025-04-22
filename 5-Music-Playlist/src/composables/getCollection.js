@@ -5,28 +5,8 @@ import { projectFirestore } from '@/firebase/config';
 const getCollection = (collectionName) => {
     const documents = ref(null);
     const error = ref(null); 
-    
 
-    // let collectionRef  = collection(db, collectionName);
-    // collectionRef.onSnapshot(
-    //     (snap)=>{
-    //         let results = [];
-    //         snap.docs.forEach(doc => {
-    //             doc.data().createdAt && results.push({ ...doc.data(), id: doc.id });
-    //         });
-    //         documents.value = results;
-    //         error.value = null; 
-    //     }
-    // ,  (err) => {
-    //     console.log(err.message);
-    //     documents.value = null;
-    //     error.value = 'Could not fetch the data';
-    // }
-    // );
-
-    // const q = query(collection(db, collectionName));
-
-    const q = query(collection(projectFirestore, collectionName), orderBy('createdAt'));
+    const q = query(collection(projectFirestore , collectionName), orderBy('createdAt'));
     // console.log(collectionName);
     // console.log(q);
     const unsubscribe = onSnapshot(q, (snapshot) => { 

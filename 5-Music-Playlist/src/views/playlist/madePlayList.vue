@@ -27,22 +27,24 @@
 import getUser from "@/composables/getUser";
 import useCollection from "@/composables/useCollection";
 import { timestamp } from "@/firebase/config";
-import { ref, watchEffect } from "vue";
+import { ref } from "vue";
+import { useRouter } from "vue-router";
 
 const title = ref("");
 const description = ref("");
 const isPend = ref(false);
 const { user } = getUser();
+const router = useRouter();
 
 const handleSubmit = async () => {
   isPend.value = true;
   console.log(user.value);
-  console.log(
-    title.value,
-    description.value,
-    user.value.uid,
-    user.value.displayName
-  );
+  // console.log(
+  //   title.value,
+  //   description.value,
+  //   user.value.uid,
+  //   user.value.displayName
+  // );
   const playlist = {
     title: title.value,
     description: description.value,
@@ -53,12 +55,12 @@ const handleSubmit = async () => {
   };
   const { error, isPending, res } = await useCollection("playlists", playlist);
 
+  // console.log("res loaded:", res.value.id);
+  // console.log("error loaded:", error.value);
 
-  console.log("res loaded:", res);
-
-  if (!error) {
+  if (!error.value) {
     console.log("Playlist created successfully!");
-    console.log("isPending", isPending.value);
+    router.push({ name: "PlayListDetails", params: { id: res.value.id } });
   } else {
     console.log(error.value);
   }
