@@ -31,21 +31,24 @@ const useCollection = async(collectionName, data) => {
   const colRef = collection(projectFirestore, collectionName);
   const error = ref(null);
   const isPending = ref(false);
+  const res = ref (null);
 
   isPending.value = true;
   error.value = null;
+  res.value = null;
 
   try{
-      await addDoc(colRef, data);
+      const now = await addDoc(colRef, data);
       isPending.value = false;
-      error.value = null;
+      error.value = null; 
+      res.value = now;
   }
   catch (err) {
       error.value = 'Could not add the document';
       console.log(err.message);
       isPending.value = false;
   }
-  return {error, isPending};
+  return {error, isPending, res};
 
 
   // await addDoc(colRef, data)

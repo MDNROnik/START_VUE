@@ -27,7 +27,7 @@
 import getUser from "@/composables/getUser";
 import useCollection from "@/composables/useCollection";
 import { timestamp } from "@/firebase/config";
-import { ref } from "vue";
+import { ref, watchEffect } from "vue";
 
 const title = ref("");
 const description = ref("");
@@ -51,7 +51,10 @@ const handleSubmit = async () => {
     song: [],
     createdAt: timestamp(),
   };
-  const { error, isPending } = await useCollection("playlists", playlist);
+  const { error, isPending, res } = await useCollection("playlists", playlist);
+
+
+  console.log("res loaded:", res);
 
   if (!error) {
     console.log("Playlist created successfully!");
