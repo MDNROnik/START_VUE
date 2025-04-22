@@ -6,7 +6,7 @@
       <h2>{{ document.title }}</h2>
       <p class="username">Created by {{ document.userName }}</p>
       <p class="description">{{ document.description }}</p>
-      <button v-if="ownership">
+      <button v-if="ownership" v-on:click="deleteDocument">
         Delete Playlist
       </button>
     </div>
@@ -21,10 +21,12 @@
 <script setup>
 const { id } = defineProps(["id"]);
 import getDocument from "@/composables/getDocument";
+import getDeleteDocument from "@/composables/getDeleteDocument";
 import getUser from "@/composables/getUser";
-
+import { useRouter } from "vue-router";
 import { watchEffect, computed } from "vue";
 
+const router = useRouter();
 const { user } = getUser();
 
 const { document, error } = getDocument("playlists", id);
@@ -41,6 +43,17 @@ const ownership = computed(() => {
     document.value && user.value && user.value.uid == document.value.userId
   );
 });
+
+const deleteDocument = () => {
+  const { error } = getDeleteDocument("playlists", id);
+  // console.log("deleted document with id:", id);
+  // console.log("error:", error.value);
+  if(!error.value){
+    router.push({ name: "Home" });
+  }
+};
+
+
 </script>
 
 <style>

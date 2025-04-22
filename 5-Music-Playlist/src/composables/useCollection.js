@@ -50,16 +50,6 @@ const useCollection = async(collectionName, data) => {
   }
   return {error, isPending, res};
 
-
-  // await addDoc(colRef, data)
-  //     .then(() => {
-  //         console.log("Document written with ID: ", colRef);
-  //     })
-  //     .catch((error) => {
-  //         console.error("Error adding document: ", error);
-  //         return error;
-  //     });
-
 }
 
 export default useCollection
