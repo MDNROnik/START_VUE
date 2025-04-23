@@ -7,8 +7,8 @@ export default function updateDocument(collection, document, id) {
     if (!document.value) {
         document.value = { song: '' }; 
     }
-    // console.log('updateDocument', collection, document, id);
-    // console.log('updateDocument', document.value);
+    console.log('updateDocument', collection, document, id);
+    console.log('updateDocument', document.value);
     
     const load = async () => {
       try {
