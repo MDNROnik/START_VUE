@@ -5,19 +5,28 @@
         <router-link :to="{ name: 'Home' }">Voice Of Your Music</router-link>
       </h1>
       <div class="links">
-        <router-link v-if="user" class="btn" :to="{ name: 'MyPlayList' }">My Playlist</router-link>
-        <router-link v-if="user" class="btn" :to="{ name: 'MadePlaylist' }">Made Playlist</router-link>
+        <span v-if="user" >{{ user.displayName }}</span>
+        <router-link v-if="user" class="btn" :to="{ name: 'MyPlayList' }"
+          >My Playlist</router-link
+        >
+        <router-link v-if="user" class="btn" :to="{ name: 'MadePlaylist' }"
+          >Made Playlist</router-link
+        >
         <button v-if="user" @click="handleClick">Logout</button>
-        <router-link v-if="!user" class="btn" :to="{ name: 'Signup' }">Signup</router-link>
-        <router-link v-if="!user" class="btn" :to="{ name: 'Login' }">Login</router-link>
+        <router-link v-if="!user" class="btn" :to="{ name: 'Signup' }"
+          >Signup</router-link
+        >
+        <router-link v-if="!user" class="btn" :to="{ name: 'Login' }"
+          >Login</router-link
+        >
       </div>
     </nav>
   </div>
 </template>
 
 <script setup>
-import useLogout from "@/composables/useLogout";
 import getUser from "@/composables/getUser";
+import useLogout from "@/composables/useLogout";
 import { useRouter } from "vue-router";
 
 const { error, logout, isPending } = useLogout();
@@ -55,5 +64,12 @@ nav .links a,
 button {
   margin-left: 16px;
   font-size: 14px;
+}
+span {
+  font-size: 14px;
+  display: inline-block;
+  margin-left: 16px;
+  padding-left: 16px;
+  border-left: 1px solid #eee;
 }
 </style>

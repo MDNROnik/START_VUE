@@ -25,13 +25,13 @@ const handleSubmit = async () => {
   const res = await login(email.value, password.value);
   console.log(res.user);
   console.log(error.value);
-  if (error) {
-    console.log("user logged in");
+  if (error.value === null) {
+    console.log("user logged in", res.value);
     router.push({ name: "Home" });
   }
   else{
     console.log("login failed");
-    error.value = res;
+    error.value = res.value;
   }  
 };
 </script>
