@@ -70,12 +70,12 @@ const deleteDocument = () => {
   }
 };
 
-const deleteSong = (songId) => {
+const deleteSong = async (songId) => {
   document.value.song = document.value.song.filter((song) => (song.id !== songId) );
   console.log("Songs after deletion:", document.value.song);
   const songs = ref(document.value.song);
   console.log("songs", songs.value);
-  const { error } = updateDocument("playlists", songs, id);
+  const { error } = await updateDocument("playlists", songs, id);
   if (error.value) {
     console.log("error", error.value);
   } else {

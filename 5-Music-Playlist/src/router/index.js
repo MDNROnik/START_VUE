@@ -6,6 +6,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import { projectAuth } from '@/firebase/config.js'
 import getUser from '@/composables/getUser.js'
+import UserPlaylist from '@/views/playlist/UserPlaylist.vue'
 
 const user = getUser()
 
@@ -52,6 +53,11 @@ const router = createRouter({
       component: PlayListDetailsView,
       // beforeEnter : requireAuth,
       props: true,
+    },
+    {
+      path: '/myplaylist/',
+      name: 'MyPlayList',
+      component: UserPlaylist,
     },
   ],
 })
