@@ -54,6 +54,7 @@ export const useTaskStore = defineStore("taskStore", {
             const task = this.tasks.find((task) => task.id === id);
             if (task) {
                 task.isFav = !task.isFav;
+                // this.valueChange = true;
             }
             const res = await fetch('http://localhost:3000/tasks/' + id, {
                 method: 'PATCH',

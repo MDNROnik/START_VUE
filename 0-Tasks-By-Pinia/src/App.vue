@@ -6,21 +6,23 @@ import TaskDetails from "./components/TaskDetails.vue";
 import { useTaskStore } from "./stores/TaskStore";
 
 const taskStore = useTaskStore();
-// taskStore.fetchTasks();
+taskStore.fetchTasks();
 
 const nowSize = ref(0);
 const now  = ref (false);
-// console.log(nowSize.value, taskStore.tasks.length);
-// console.log(taskStore.valueChange);
+console.log(nowSize.value, taskStore.tasks.length);
+console.log(taskStore.valueChange);
+
 
 watchEffect(() => {
-  if ( taskStore.valueChange === true) {
+  if ( taskStore.valueChange) {
     taskStore.fetchTasks();
     nowSize.value = taskStore.tasks.length;
     console.log("Fetching tasks...");
     taskStore.valueChange = false;
     // console.log(nowSize.value, taskStore.tasks.length);
   }
+  
 });
 
 const filter = ref("all");

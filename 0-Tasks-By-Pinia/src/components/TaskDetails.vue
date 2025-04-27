@@ -1,7 +1,7 @@
 <template>
   <div class="task">
     <div class="task-details">
-      <h2>{{ task.id }}</h2>
+      <!-- <h2>{{ task.id }}</h2> -->
       <p>{{ task.name }}</p>
       <div class="icons">
         <i class="material-icons" @click="deleteTask(task.id)"
@@ -26,10 +26,13 @@ import { watchEffect } from "vue";
 const taskStore = useTaskStore();
 watchEffect(() => {
   if (!task.id) {
-    taskStore.fetchTasks();
+    console.log( "Task ID is not defined.");
+    taskStore.valueChange = true;
+    // taskStore.fetchTasks();
   } 
 });
 const deleteTask = (id) => {
+  
   taskStore.removeTask(id);
   console.log("Deleting task with id:", id);
   console.log(taskStore.valueChange);
