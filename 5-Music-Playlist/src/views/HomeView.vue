@@ -1,7 +1,6 @@
 <template>
   <div class="home">
-    <h1>Welcome to the Home Page</h1>
-    <p>This is a simple Vue.js application.</p>
+    <h1>Welcome to Music Blog</h1>
   </div>
   <div v-if="error">{{ error }}</div>
   <!-- <div v-if="formattedDocuments" ref="messages" class="messages">
