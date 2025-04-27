@@ -1,29 +1,31 @@
 <template>
-  <div class="error" v-if="error">{{ error }}</div>
-  <div v-if="document" class="playlist-details">
-    <!-- playlist information -->
-    <div class="playlist-info">
-      <h2>{{ document.title }}</h2>
-      <p class="username">Created by {{ document.userName }}</p>
-      <p class="description">{{ document.description }}</p>
-      <button v-if="ownership" v-on:click="deleteDocument">
-        Delete Playlist
-      </button>
-    </div>
+  <div>
+    <div class="error" v-if="error">{{ error }}</div>
+    <div v-if="document" class="playlist-details">
+      <!-- playlist information -->
+      <div class="playlist-info">
+        <h2>{{ document.title }}</h2>
+        <p class="username">Created by {{ document.userName }}</p>
+        <p class="description">{{ document.description }}</p>
+        <button v-if="ownership" v-on:click="deleteDocument">
+          Delete Playlist
+        </button>
+      </div>
 
-    <!-- song list -->
-    <div class="song-list">
-      <div v-if="!document.song.length">
-        No songs have been added to this playlist yet.
-      </div>
-      <div v-for="song in document.song" :key="song.id" class="single-song">
-        <div class="details">
-          <h3>{{ song.title }}</h3>
-          <p>{{ song.artist }}</p>
+      <!-- song list -->
+      <div class="song-list">
+        <div v-if="!document.song.length">
+          No songs have been added to this playlist yet.
         </div>
-        <button v-if="ownership" @click="deleteSong(song.id)">delete</button>
+        <div v-for="song in document.song" :key="song.id" class="single-song">
+          <div class="details">
+            <h3>{{ song.title }}</h3>
+            <p>{{ song.artist }}</p>
+          </div>
+          <button v-if="ownership" @click="deleteSong(song.id)">delete</button>
+        </div>
+        <AddSong v-if="ownership" :document="newDocument" :id="id" />
       </div>
-      <AddSong v-if="ownership" :document="newDocument" :id="id" />
     </div>
   </div>
 </template>
@@ -107,7 +109,7 @@ const deleteSong = async (songId) => {
   color: #999;
 }
 .description {
-  text-align: left;
+  text-align: center;
 }
 .single-song {
   padding: 10px 0;

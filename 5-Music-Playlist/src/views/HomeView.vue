@@ -1,17 +1,12 @@
 <template>
-  <div class="home">
-    <h1>Welcome to Music Blog</h1>
-  </div>
-  <div v-if="error">{{ error }}</div>
-  <!-- <div v-if="formattedDocuments" ref="messages" class="messages">
-    <div v-for="doc in formattedDocuments" :key="doc.id" class="single">
-      <span class="name">{{ doc.title }}</span>
-      <span class="message">{{ doc.description }}</span>
-      <span class="message">{{ doc.userName }}</span>
+  <div>
+    <div class="home">
+      <h1>Welcome to Music Blog</h1>
     </div>
-  </div> -->
-  <SingleBlog :playlists="documents"/>
-  
+    <div v-if="error">{{ error }}</div>
+
+    <SingleBlog :playlists="documents"/>
+  </div>
 </template>
 
 <script setup>

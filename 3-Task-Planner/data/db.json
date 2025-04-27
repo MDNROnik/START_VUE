@@ -1,28 +1,3 @@
 {
-  "tasks": [
-    {
-      "id": "1",
-      "title": "test",
-      "details": "test",
-      "complete": true
-    },
-    {
-      "id": "2",
-      "title": "test 22222222",
-      "details": "test22222222",
-      "complete": true
-    },
-    {
-      "id": "6eea",
-      "title": "task 3",
-      "details": "test drive",
-      "complete": false
-    },
-    {
-      "id": "87b3",
-      "title": "test 4",
-      "details": "test 4",
-      "complete": true
-    }
-  ]
+  "tasks": []
 }

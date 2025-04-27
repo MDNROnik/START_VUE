@@ -1,11 +1,14 @@
 <template>
-  <div class="user-playlists">
-    <h2>My Playlists</h2>
-  </div>
-  <div v-if="error">{{ error }}</div>
-  <div v-else-if="documents && documents.length === 0">Loading...</div>
-  <div v-else>
-    <SingleBlog :playlists="documents" />
+  <div>
+    <div class="user-playlists">
+      <h2>My Playlists</h2>
+    </div>
+    <div v-if="error">{{ error }}</div>
+    <div v-else-if="!documents">Loading...</div>
+    <div v-else-if="documents.length === 0">You Have No PlayList</div>
+    <div v-else>
+      <SingleBlog :playlists="documents" />
+    </div>
   </div>
 </template>
 
@@ -27,6 +30,7 @@ watchEffect(() => {
     documents.value = documents.value.filter(
       (doc) => doc.userId === user.value.uid
     );
+    console.log("Filtered documents:", documents.value);
   }
 });
 </script>
